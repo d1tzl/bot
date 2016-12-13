@@ -20,7 +20,7 @@ module.exports = {
 	aliases: ['hs'],
 	task(bot, msg, suffix) {
 		if (!suffix) return 'wrong usage';
-		superagent.get(`http://services.runescape.com/m=hiscore/index_lite.ws?player=${suffix}`)
+		superagent.get(`http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${suffix}`)
 			.end((error, response) => {
 				if (error) {
 					logger.warn('Error getting stats for a user: ' + (error.status || error.response));
